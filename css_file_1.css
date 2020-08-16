@@ -38,6 +38,10 @@ header {
 
 }
 
+#Nav-Toggle{
+    display: none;
+}
+
 nav {
     position: relative;
     width: 80%;
@@ -94,9 +98,6 @@ nav>.nav-element {
 
 
 
-
-
-
 .content {
     position: relative;
     width: 100%;
@@ -132,7 +133,6 @@ nav>.nav-element {
 }
 
 .picture-container {
-
     width: 32%;
     height: 100%;
     margin: -10px;
@@ -255,7 +255,7 @@ nav>.nav-element {
 .card {
     position: relative;
     width: 30%;
-    height: 28vw;
+    height: 25vw;
     margin: 1%;
     border: solid var(--mainColor) 2px;
 }
@@ -473,3 +473,349 @@ footer {
 
 
 /* footer css end */
+
+
+
+
+/* less than 768 px */
+@media screen and (max-width:769px){
+    /* header css */
+    header {
+        position: relative;
+        width: 100%;
+        height: 100px;
+    }
+
+    #Header-Wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    #Section-Left {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: var(--mainColor);
+        z-index: 12;
+        clip-path: none;
+
+    }
+
+    /* Nav-Toggle animation code bundle */
+    @keyframes NavToggleAnim-B1{
+        0% {
+            transform-origin: left;
+            transform: rotate(0deg);
+        }
+        100% {
+            transform-origin: left;
+            transform: translateX(5px) rotate(45deg);
+        }
+    }
+    @keyframes NavToggleAnim-B1-rev{
+        0% {
+            transform-origin: left;
+            transform: translateX(5px) rotate(45deg);
+        }
+        100% {
+            transform-origin: left;
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes NavToggleAnim-B2{
+        0% {transform: rotate(0deg);}
+        100% {transform: translateX(5px) rotate(45deg);}
+    }
+    @keyframes NavToggleAnim-B2-rev{
+        0% {transform: translateX(5px) rotate(45deg);}
+        100% {transform: rotate(0deg);}
+    }
+
+    @keyframes NavToggleAnim-B3{
+        0% {
+            transform-origin: left;
+            transform: rotate(0deg);
+        }
+        100% {
+            transform-origin: left;
+            transform: translateX(5px) rotate(-45deg) scale(1.2,1.5);
+        }
+
+    }
+    @keyframes NavToggleAnim-B3-rev{
+        0% {
+            transform-origin: left;
+            transform: translateX(5px) rotate(-45deg) scale(1.2,1.5);
+        }
+        100% {
+            transform-origin: left;
+            transform: rotate(0deg);
+        }
+    }
+    /* end------------------------end*/
+
+    #Nav-Toggle{
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: none;
+        color: red;
+        border: none; 
+        outline: none; 
+    }
+    .helper{
+        display: none;
+        position: absolute;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: none;
+        color: red;
+        border: none;
+        outline: none;
+    }
+    #Nav-Toggle>.bar{
+        position: relative;
+        margin: 12px auto;
+        width: 40%;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+    }
+    nav {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        height: 300px;
+        color: white;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(0) rotate(0);
+        background: #1E1711;
+        opacity: 0.8;
+    }
+    #Nav-Toggle:focus{
+        background-color: #314F56;
+    }
+
+
+
+
+    /* Nav-Toggle animations applied */
+    #Nav-Toggle:focus .b1{
+        animation: NavToggleAnim-B1;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+    }
+    #Nav-Toggle:focus .b2{
+        animation: NavToggleAnim-B2;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+    }
+    #Nav-Toggle:focus .b3{
+        animation: NavToggleAnim-B3;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+    }
+    #Nav-Toggle:not(:focus) .b1{
+        animation: NavToggleAnim-B1-rev;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+    }
+    #Nav-Toggle:not(:focus) .b2{
+        animation: NavToggleAnim-B2-rev;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+    }
+    #Nav-Toggle:not(:focus) .b3{
+        animation: NavToggleAnim-B3-rev;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+    }
+    /* end----------------------end */
+
+
+
+
+
+
+
+    #Nav-Toggle:focus ~ nav{
+        display: flex;
+    }
+    #Nav-Toggle:focus ~ .helper{
+        display: inline-block;  
+    }
+
+    nav>.nav-element {
+        margin: 12px 3vw;
+        font-size: 120%;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    }
+
+    #Section-Right {
+        display: none;
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        width: 100%;
+        height: 230%;
+        background: #314F56;
+        overflow: visible;
+        z-index: 11;
+        clip-path: none;
+    }
+    /* header css end */
+
+    /* Home css */
+#Home {
+    position: relative;
+    width: 100%;
+    height: 42vw;
+
+}
+
+#Home-Pictures-Wrapper {
+    position: relative;
+    top: 10%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    transform: translate(-50%, 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.picture-container {
+    width: 300px;
+    height: 40vw;
+    min-height: 200px;
+    margin: 0;
+    background: #999999;
+    transform: none;
+    border: solid var(--mainColor) 2px;
+    border-top: none;
+    border-right: none;
+}
+
+#Home-Design {  
+    height: 50%;
+    clip-path: none; 
+}
+/* Home css end*/
+
+
+
+
+
+/* About css*/
+#About{
+    margin-top: 80px;
+}
+/* About css end*/
+
+
+
+/* Portfolio css*/
+#Portfolio-Cards-Wrapper {
+    width: 100%;
+}
+.card {
+    position: relative;
+    width: 40%;
+    height: 40vw;
+    margin: 2%; 
+}
+/* Portfolio css end*/
+
+
+
+/* Services css*/
+#Services-Icons-Wrapper {  
+    width: 100%;
+}
+.services-icon-box {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    border: solid 2px var(--mainColor);
+}
+/* Services css end*/
+
+
+/* QuoteBox css*/
+#QuoteBox-Wrapper {
+    clip-path: none;
+}
+#QuoteText {
+    width: 80%;
+    top: 34%;
+}
+#QuoteAuthor {
+    width: auto;
+    height: auto;
+    top: 75%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+/* QuoteBox css end*/
+
+
+
+
+
+}   /* less than 768 px end*/
+
+
+
+
+
+/* less than 425 px*/
+@media screen and (max-width: 425px){
+    #Home-Pictures-Wrapper {
+        flex-wrap: wrap;
+    }
+    .picture-container {
+        display: none;
+    }
+    .picture-container:first-child {
+        display: initial;
+        width: 100%;
+        height: 55vw;
+    }
+
+}
+/* less than 425 px end*/
+
+
