@@ -133,7 +133,7 @@ nav>.nav-element {
 }
 
 .picture-container {
-    width: 32%;
+    width: 35%;
     height: 100%;
     margin: -10px;
     background: #999999;
@@ -319,8 +319,13 @@ nav>.nav-element {
     position: relative;
     width: 100px;
     height: 100px;
-    margin: 10px;
-    border: solid 2px var(--mainColor);
+    margin: 20px;
+    
+}
+.services-icon-box>img{
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /*  Services css end*/
@@ -716,7 +721,7 @@ footer {
 }
 
 .picture-container {
-    width: 300px;
+    width: 40vw;
     height: 40vw;
     min-height: 200px;
     margin: 0;
@@ -767,8 +772,8 @@ footer {
     position: relative;
     width: 80px;
     height: 80px;
-    margin: 5px;
-    border: solid 2px var(--mainColor);
+    margin: 10px;
+    
 }
 /* Services css end*/
 
@@ -792,6 +797,58 @@ footer {
 /* QuoteBox css end*/
 
 
+/* ContactBox css */
+
+#ContactBox-Main>#Contact {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    height: 20vw;
+    max-height: 100px;
+    background: #D89F9F;
+    clip-path: none;
+    color: var(--mainColor);
+}
+
+#ContactBox-Main>#Contact>div {
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    text-align: center;
+}
+
+#ContactBox-Secondary>#Email {
+    top: 0%;
+    right: 0;
+    transform: translate(0%, 0%);
+    width: 60%;
+    height: 30px;
+
+    clip-path: none;
+}
+
+#ContactBox-Secondary>#Phone {
+    top: 15%;
+    right: 0;
+    transform: translate(0%, 0%);
+    width: 60%;
+    height: 30px;
+
+    clip-path: none;
+}
+
+#ContactBox-Secondary>#Form {
+    top: 30%;
+    right: 0;
+    transform: translate(0%, 0%);
+    width: 60%;
+    height: 30px;
+
+    clip-path: none;
+}
+
+/* ContactBox css end */
 
 
 
@@ -801,8 +858,8 @@ footer {
 
 
 
-/* less than 425 px*/
-@media screen and (max-width: 425px){
+/* less than 550 px*/
+@media screen and (max-width: 550px){
     #Home-Pictures-Wrapper {
         flex-wrap: wrap;
     }
@@ -811,9 +868,13 @@ footer {
     }
     .picture-container:first-child {
         display: initial;
-        width: 100%;
-        height: 55vw;
+        width: 100vw;
+        height: 90vw;
     }
+    #About {
+        margin-top: 300px;
+    }
+
 
 }
 /* less than 425 px end*/
