@@ -1,22 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Roboto:ital,wght@0,700;0,900;1,300;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
 * {
     margin: 0%;
     padding: 0%;
     border: 0;
 }
 
+
 body {
+    scroll-behavior: smooth;
     --mainColor: #1E1711;
+    font-family: 'Roboto Slab', serif;
+    
 }
 
 
-
-
 /* header css */
+@keyframes header-fade{
+    0%{
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
 
 header {
     position: relative;
     width: 100%;
     height: 100px;
+    animation: header-fade 2s ease-out;
 }
 
 #Header-Wrapper {
@@ -57,9 +75,17 @@ nav {
 nav>.nav-element {
     margin: 0 3vw;
     font-size: 120%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+    font-family: 'Roboto', sans-serif;
 }
+nav>.nav-element>a{
+    color: white;
+    text-decoration: none;  
+    transition-duration: scroll 2s;
+}
+nav>.nav-element>a:hover{
+    border-bottom: solid 2px white;
+}
+
 
 #Section-Right {
     position: absolute;
@@ -78,8 +104,19 @@ nav>.nav-element {
 
 /* content css */
 /* general css (so I don't retype it to much) */
+@keyframes content-fade{
+    0%{
+        opacity: 0;
+        transform: translateY(1000px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
 .titleText {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 200%;
     font-weight: bolder;
     color: var(--mainColor);
@@ -87,8 +124,7 @@ nav>.nav-element {
 
 .descriptionText {
     font-family: 'Roboto Slab', serif;
-    font-weight: 300;
-    font-size: 105%;
+    font-size: 110%;
     color: var(--mainColor);
 }
 
@@ -102,7 +138,7 @@ nav>.nav-element {
     position: relative;
     width: 100%;
     height: auto;
-
+    animation: content-fade 2s ease-out;
 }
 
 .content-wrapper {
@@ -124,23 +160,29 @@ nav>.nav-element {
     top: 48%;
     left: 50%;
     width: 80%;
-    height: 70%;
+    height: 80%;
     z-index: 10;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .picture-container {
-    width: 35%;
-    height: 100%;
-    margin: -10px;
-    background: #999999;
-    transform: rotate(5deg);
-    border: solid var(--mainColor) 2px;
-    border-top: none;
-    border-right: none;
+    position: absolute;
+    top: 0;
+    left: 85%;
+    transform: translateX(-50%);
+    width: 45%;
+}
+.p-c2{
+    top: 15%; left: 50%;
+}
+.p-c3{
+    top: 30%; left: 15%;
+}
+.picture-container>img{
+    position: relative;
+    width: 100%;
 }
 
 #Home-Design {
@@ -203,7 +245,6 @@ nav>.nav-element {
     width: 100%;
     height: auto;
     margin-top: 72px;
-
 }
 
 #Portfolio-Wrapper {
@@ -242,7 +283,8 @@ nav>.nav-element {
 
 #Portfolio-Cards-Wrapper {
     position: relative;
-    width: 70%;
+    width: 100%;
+    max-width: 1200px;
     height: auto;
     margin: auto;
     margin-top: 5px;
@@ -254,10 +296,45 @@ nav>.nav-element {
 
 .card {
     position: relative;
-    width: 30%;
-    height: 25vw;
+    width: 365px;
+    height: 440px;
+    max-height: 500px;
     margin: 1%;
-    border: solid var(--mainColor) 2px;
+    border: solid var(--mainColor) 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', serif;
+}
+.card-image{
+    width: 100%;
+}
+.card-image>img{
+    width: 100%;
+}
+.card-title{
+    padding-top: 5px;
+    font-weight: lighter;
+    font-size: 180%;
+    border-bottom: solid 1px black;
+}
+.card-description{
+    margin-top: 22px;
+    padding: 5px;
+    text-align: center;
+}
+.card-button{
+    font-size: 120%;
+    background: #314F56;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.card-button:hover{
+    background: lightseagreen;
 }
 
 /* Portfolio css end */
@@ -331,6 +408,26 @@ nav>.nav-element {
 /*  Services css end*/
 
 /* QuotesBox css */
+@keyframes quoteFade-in-left{
+    0%{
+        opacity: 0;
+        transform: translate(-70%, -50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+@keyframes quoteFade-in-right{
+    0%{
+        opacity: 0;
+        transform: translate(-20%, -50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
 #QuoteBox {
     margin-top: 50px;
     position: relative;
@@ -355,6 +452,11 @@ nav>.nav-element {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+
+    animation-name: quoteFade-in-left;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
 #QuoteAuthor {
@@ -365,6 +467,11 @@ nav>.nav-element {
     left: 76%;
     transform: translate(-50%, -50%);
     color: white;
+
+    animation-name: quoteFade-in-right;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
 /* QuotesBox css end */
@@ -374,6 +481,7 @@ nav>.nav-element {
     position: relative;
     width: 100%;
     margin: auto;
+    
 }
 
 #ContactBox-Wrapper {
@@ -407,6 +515,8 @@ nav>.nav-element {
     left: 72%;
     top: 28%;
     transform: translate(-50%, -50%) rotate(3deg);
+    font-family: 'Roboto Slab', serif;
+    font-weight: normal;
 }
 
 #ContactBox-Secondary {
@@ -463,10 +573,23 @@ nav>.nav-element {
 
 
 /* footer css */
+@keyframes Jiggle{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(10deg);
+    }
+    75%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
 footer {
     position: relative;
     width: 100%;
-    height: 200px;
 }
 
 #Footer-Wrapper {
@@ -474,6 +597,51 @@ footer {
     width: 100%;
     height: 100%;
     background: #B59780;
+}
+.links-wrapper{
+    position: relative;
+    margin: auto;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer-link{
+    color: black;
+    text-decoration: none;
+    position: relative;
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer-link:hover>.footer-link-icon{
+    
+    animation-name: Jiggle;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+.footer-link>div{
+    padding: 0 5px;
+}
+.footer-link-icon>img{
+    width: 30px;
+}
+hr{
+    
+    border-bottom: solid 1px black;
+}
+#Copyright{
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 20px;
 }
 
 
@@ -572,6 +740,7 @@ footer {
         color: red;
         border: none; 
         outline: none; 
+        
     }
     .helper{
         display: none;
@@ -598,13 +767,16 @@ footer {
         width: 100%;
         height: 300px;
         color: white;
-        display: none;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transform: translateX(0) rotate(0);
+        transform: translate(0,-500px) rotate(0);
         background: #1E1711;
         opacity: 0.8;
+        transition-duration: 0.5s;
+        transition-delay: 0.1s;
+        z-index: -2;
     }
     #Nav-Toggle:focus{
         background-color: #314F56;
@@ -672,6 +844,7 @@ footer {
 
     #Nav-Toggle:focus ~ nav{
         display: flex;
+        transform: translate(0,0px) rotate(0);
     }
     #Nav-Toggle:focus ~ .helper{
         display: inline-block;  
@@ -707,30 +880,31 @@ footer {
 }
 
 #Home-Pictures-Wrapper {
-    position: relative;
-    top: 10%;
-    left: 50%;
+    position: absolute;
     width: 100%;
-    height: auto;
+    height: 100%;
     z-index: 10;
-    transform: translate(-50%, 0%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+}
+.picture-container{
+    width: 50%;
+}
+.p-c1{
+    top: 25%; left: 75%;
+}
+.p-c2{
+    top: 2%; left: 45%;
+}
+.p-c2>img{
+    border-bottom-right-radius: 50%;
+}
+.p-c3{
+    width: 51%;
+    top: 40%; left: 25%;
+}
+.p-c3>img{
+    border-top-right-radius: 50%;
 }
 
-.picture-container {
-    width: 40vw;
-    height: 40vw;
-    min-height: 200px;
-    margin: 0;
-    background: #999999;
-    transform: none;
-    border: solid var(--mainColor) 2px;
-    border-top: none;
-    border-right: none;
-}
 
 #Home-Design {  
     height: 50%;
@@ -755,13 +929,9 @@ footer {
     width: 100%;
 }
 .card {
-    position: relative;
-    width: 40%;
-    height: 40vw;
-    margin: 2%; 
+    height: 440px;
 }
 /* Portfolio css end*/
-
 
 
 /* Services css*/
@@ -808,6 +978,7 @@ footer {
     background: #D89F9F;
     clip-path: none;
     color: var(--mainColor);
+    
 }
 
 #ContactBox-Main>#Contact>div {
@@ -824,8 +995,8 @@ footer {
     transform: translate(0%, 0%);
     width: 60%;
     height: 30px;
-
     clip-path: none;
+    
 }
 
 #ContactBox-Secondary>#Phone {
@@ -860,23 +1031,30 @@ footer {
 
 /* less than 550 px*/
 @media screen and (max-width: 550px){
-    #Home-Pictures-Wrapper {
-        flex-wrap: wrap;
+    #About{
+        margin-top: 150px;
     }
-    .picture-container {
-        display: none;
+    #Home-Pictures-Wrapper>.picture-container>img{
+        border-radius: 0%;
     }
-    .picture-container:first-child {
-        display: initial;
-        width: 100vw;
-        height: 90vw;
+    .p-c1{
+        top: 0%; left: 25%;
+        width: 50%;
     }
-    #About {
-        margin-top: 300px;
+    .p-c2{
+        top: 0%; left: 75%;
+        width: 50%;
     }
-
+    .p-c3{
+        top: 75%; left: 50%;
+        width: 100%;
+        height: 100%;
+        max-height: 200px;
+        overflow: hidden;
+    }
+    
 
 }
-/* less than 425 px end*/
+/* less than 550 px end*/
 
 

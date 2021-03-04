@@ -17,7 +17,7 @@
     <!-- auxiliar -->
 </head>
 
-<body>
+<body id="body">
 
 
     <header>
@@ -32,11 +32,11 @@
                 <div class="helper"></div>
                 <nav>
                     <!-- to finish the link css -->
-                    <div class="nav-element">Home</div>
-                    <div class="nav-element">About</div>
-                    <div class="nav-element">Portfolio</div>
-                    <div class="nav-element">Services</div>
-                    <div class="nav-element">Contact</div>
+                    <div class="nav-element"><a href="./index.html">Home</a></div>
+                    <div class="nav-element"><a href="#About">About</a></div>
+                    <div class="nav-element"><a href="#Portfolio">Portfolio</a></div>
+                    <div class="nav-element"><a href="#Services">Services</a></div>
+                    <div class="nav-element"><a href="#Contact">Contact</a></div>
                 </nav>
             </div>
 
@@ -54,9 +54,9 @@
             <!-- Home hypertext -->
             <section id="Home">
                 <div id="Home-Pictures-Wrapper">
-                    <div class="picture-container">1</div>
-                    <div class="picture-container">2</div>
-                    <div class="picture-container">3</div>
+                    <div class="picture-container p-c1"><img src="./Images/christian-wiediger-WkfDrhxDMC8-unsplash.jpg" alt=""></div>
+                    <div class="picture-container p-c2"><img src="./Images/AUX11.jpg" alt=""></div>
+                    <div class="picture-container p-c3"><img src="./Images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg" alt=""></div>
                 </div>
 
                 <div id="Home-Design">
@@ -100,7 +100,12 @@
                     </div>
 
                     <div id="Portfolio-Cards-Wrapper">
-                        <div class="card"><button>1</button></div>
+                        <div class="card">
+                            <div class="card-image"><img src="./Images/AUX11.jpg" alt=""></div>
+                            <div class="card-title"><p>Titlu</p></div>
+                            <div class="card-description"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, perferendis.</p></div>
+                            <a class="card-button" href="#">Visit Page</a>
+                        </div>
                         <div class="card"><button>2</button></div>
                         <div class="card"><button>3</button></div>
                         <div class="card"><button>4</button></div>
@@ -179,15 +184,32 @@
 
     <footer>
         <div id="Footer-Wrapper">
-            <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-buddha" title="Pixel Buddha">Pixel Buddha</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-            <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-            <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"             title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-        </div>
+            <div class="links-wrapper">
+                <a href="#" class="footer-link">
+                    <div class="footer-link-icon"><img src="./My_services_icons/github.svg" alt=""></div>
+                    <div class="footer-link-description"><div>My GitHub</div></div>
+                </a>
 
+                
+                <a href="#" class="footer-link">
+                    <div class="footer-link-icon"><img src="./My_services_icons/linkedin.svg" alt=""></div>
+                    <div class="footer-link-description"><div>My Linkedin</div></div>
+                </a>
+
+                
+                <a href="#" class="footer-link">
+                    <div class="footer-link-icon"><img src="./My_services_icons/facebook.svg" alt=""></div>
+                    <div class="footer-link-description"><div>My Facebook</div></div>
+                </a>
+            </div>
+            <hr>
+            <div id="Copyright">[  ©Copyright 2021 &nbsp|&nbsp Created by Ilie Tudor &nbsp|&nbsp All rights reserved  ]</div>
+        </div>
     </footer>
 
 
     <script src="js_file_1.js"></script>
+    <script src="./quote.js"></script>
 </body>
 
 </html>
