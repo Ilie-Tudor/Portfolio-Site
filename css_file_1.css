@@ -94,9 +94,18 @@ nav>.nav-element>a:hover{
     width: 100%;
     height: 230%;
     background: #314F56;
-    overflow: visible;
+    overflow: hidden;
     z-index: 11;
     clip-path: polygon(70% 10%, 100% 60%, 100% 67%, 70% 17%);
+}
+.sigla-box{
+    position: absolute;
+    display: inline-block;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: auto;
+    z-index: 99;
 }
 
 /* header css end */
@@ -297,7 +306,7 @@ nav>.nav-element>a:hover{
 .card {
     position: relative;
     width: 365px;
-    height: 440px;
+    height: 500px;
     max-height: 500px;
     margin: 1%;
     border: solid var(--mainColor) 1px;
@@ -311,6 +320,7 @@ nav>.nav-element>a:hover{
 }
 .card-image>img{
     width: 100%;
+    height: auto;
 }
 .card-title{
     padding-top: 5px;
@@ -323,18 +333,29 @@ nav>.nav-element>a:hover{
     padding: 5px;
     text-align: center;
 }
+.card-button-wrapper{
+    margin-top: auto;
+    margin-bottom: 50px;
+}
 .card-button{
     font-size: 120%;
+    display: inline-block;
+    width: 100px;
     background: #314F56;
     color: white;
     text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-top: auto;
-    margin-bottom: auto;
+    text-align: center;
+    padding: 5px 10px; 
+    margin: 0 5px; 
+}
+.card-button:nth-of-type(2){
+    background: #B59780;
 }
 .card-button:hover{
-    background: lightseagreen;
+    background: #B59780;
+}
+.card-button:nth-of-type(2):hover{
+    background: #314F56;
 }
 
 /* Portfolio css end */
@@ -380,6 +401,7 @@ nav>.nav-element>a:hover{
 .services-text {
     position: relative;
     text-align: center;
+    margin: 20px 0;
 }
 
 #Services-Icons-Wrapper {
@@ -537,10 +559,13 @@ nav>.nav-element>a:hover{
     max-height: 50px;
     clip-path: polygon();
     background: #D89F9F;
-
+    
     clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 90%);
 }
+#ContactBox-Secondary>#Email:hover{
+    background: #8a6565;
 
+}
 #ContactBox-Secondary>#Phone {
     top: 34%;
     left: 38%;
@@ -553,7 +578,9 @@ nav>.nav-element>a:hover{
 
     clip-path: polygon(0 20%, 100% 0%, 93% 100%, 0 90%);
 }
-
+#ContactBox-Secondary>#Phone:hover{
+    background: #8a6565;
+}
 #ContactBox-Secondary>#Form {
     top: 54%;
     left: 38%;
@@ -566,7 +593,9 @@ nav>.nav-element>a:hover{
 
     clip-path: polygon(0 0, 90% 25%, 70% 100%, 0 90%);
 }
-
+#ContactBox-Secondary>#Form:hover{
+    background: #8a6565;
+}
 /* ContactBox css end */
 
 /* content css end */
@@ -869,6 +898,13 @@ hr{
         z-index: 11;
         clip-path: none;
     }
+    .sigla-box{
+        position: absolute;
+        width: 20px;
+        top: 40px;
+        left: 30px;
+        z-index: 99;
+    }
     /* header css end */
 
     /* Home css */
@@ -990,8 +1026,9 @@ hr{
 }
 
 #ContactBox-Secondary>#Email {
+    position: absolute;
     top: 0%;
-    right: 0;
+    right: 0%;
     transform: translate(0%, 0%);
     width: 60%;
     height: 30px;
@@ -1051,6 +1088,62 @@ hr{
         height: 100%;
         max-height: 200px;
         overflow: hidden;
+    }
+    #ContactBox-Wrapper{
+        flex-direction: column;
+    }
+    #ContactBox-Main{
+        width: 50%;
+    }
+    
+    #ContactBox-Main>#Contact {
+        position: relative;
+        bottom: 0px;
+        width: 100%;
+        height: 20vw;
+        max-height: 100px;
+        clip-path: none;  
+    }
+    
+    #ContactBox-Main>#Contact>div {
+        width: 100%;
+        left: 0%;
+        top: 0%;
+        transform: translate(0%, 0%) rotate(0deg);
+        text-align: center;
+    }
+    #ContactBox-Secondary{
+        width: 100%;
+        height: 100%;
+    }
+    #ContactBox-Secondary>#Email {
+        position: absolute;
+        top: 5%;
+        right: 0%;
+        transform: translate(0%, 0%);
+        width: 60%;
+        height: 30px;
+        clip-path: none;   
+    }
+    
+    #ContactBox-Secondary>#Phone {
+        top: 20%;
+        right: 0;
+        transform: translate(0%, 0%);
+        width: 60%;
+        height: 30px;
+    
+        clip-path: none;
+    }
+    
+    #ContactBox-Secondary>#Form {
+        top: 35%;
+        right: 0;
+        transform: translate(0%, 0%);
+        width: 60%;
+        height: 30px;
+    
+        clip-path: none;
     }
     
 
